@@ -1,0 +1,26 @@
+{
+	"state": "production",
+	"organization": "gearboxworks",
+	"name": "terminus",
+	"maintainer": "Gearbox Team <team@gearbox.works>",
+	"class": "system",
+	"network": "--network gearboxnet",
+	"ports": [
+	],
+	"volumes": "",
+	"restart": "--restart no",
+	"run": "",
+	"args": "",
+	"env": {
+		"PANTHEON_USER": "gearbox"
+	},
+	"refurl": "https://pantheon.io/docs/terminus",
+	"versions": {
+		"2.3.0": {
+			"majorversion": "2.3",
+			"latest": false,
+			"ref": "",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		}
+	}
+}

@@ -1,0 +1,4 @@
+.*.swp
+*.OLD
+docker-template
+docker-template.tgz

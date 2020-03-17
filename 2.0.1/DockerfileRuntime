@@ -1,0 +1,85 @@
+
+################################################################################
+# WARNING: This file has been auto-generated. DO NOT EDIT: WARNING
+# Created on 2020-03-17T13:55:44+1100, using template:DockerfileRuntime.tmpl and json:gearbox.json
+# Referenced Docker container for docker-terminus based off gearboxworks/gearbox-base:alpine-3.10 with composer:1.10 overlayed.
+
+ARG VERSION=2.0.1
+
+# 1. First reference the gearbox-base image.
+FROM gearboxworks/gearbox-base:alpine-3.10 as gearbox-base
+
+# 2. Next reference the third party image.
+FROM composer:1.10
+ARG VERSION
+ARG GEARBOX_ENTRYPOINT
+ARG GEARBOX_ENTRYPOINT_ARGS
+USER root
+
+# 3. Copy the build directory over from gearbox-base image.
+COPY --from=gearbox-base /etc/gearbox /etc/gearbox
+
+# 4. Set up env variables.
+MAINTAINER Gearbox Team <team@gearbox.works>
+ENV GEARBOX_CONTAINER_NAME "docker-terminus"
+ENV GEARBOX_CONTAINER_VERSION ${VERSION}
+ENV GEARBOX_ENTRYPOINT ${GEARBOX_ENTRYPOINT}
+ENV GEARBOX_ENTRYPOINT_ARGS ${GEARBOX_ENTRYPOINT_ARGS}
+LABEL gearbox.json='{"state": "production","organization": "gearboxworks","name": "terminus","maintainer": "Gearbox Team <team@gearbox.works>","class": "system","network": "--network gearboxnet","ports": [],"volumes": "","restart": "--restart no","run": "","args": "","env": {"PANTHEON_USER": "gearbox"},"refurl": "https://pantheon.io/docs/terminus","versions": {"2.3.0": {"majorversion": "2.3","latest": true,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"2.2.0": {"majorversion": "2.2","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"2.1.0": {"majorversion": "2.1","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"2.0.1": {"majorversion": "2.0","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.9.0": {"majorversion": "1.9","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.8.1": {"majorversion": "1.8","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.7.1": {"majorversion": "1.7","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.6.2": {"majorversion": "1.6","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"},"1.5.0": {"majorversion": "1.5","latest": false,"ref": "composer:1.10","base": "gearboxworks/gearbox-base:alpine-3.10"}}}'
+LABEL gearbox.version='2.0.1'
+ENV GEARBOX_VERSION "2.0.1"
+LABEL container.args=""
+ENV GEARBOX_ARGS ""
+LABEL container.class="system"
+ENV GEARBOX_CLASS "system"
+# SKIP env
+LABEL container.maintainer="Gearbox Team <team@gearbox.works>"
+ENV GEARBOX_MAINTAINER "Gearbox Team <team@gearbox.works>"
+LABEL container.name="terminus"
+ENV GEARBOX_NAME "terminus"
+LABEL container.network="--network gearboxnet"
+ENV GEARBOX_NETWORK "--network gearboxnet"
+LABEL container.organization="gearboxworks"
+ENV GEARBOX_ORGANIZATION "gearboxworks"
+LABEL container.ports="[]"
+ENV GEARBOX_PORTS "[]"
+LABEL container.refurl="https://pantheon.io/docs/terminus"
+ENV GEARBOX_REFURL "https://pantheon.io/docs/terminus"
+LABEL container.restart="--restart no"
+ENV GEARBOX_RESTART "--restart no"
+LABEL container.run=""
+ENV GEARBOX_RUN ""
+LABEL container.state="production"
+ENV GEARBOX_STATE "production"
+# SKIP versions
+LABEL container.volumes=""
+ENV GEARBOX_VOLUMES ""
+LABEL container.base="gearboxworks/gearbox-base:alpine-3.10"
+ENV GEARBOX_BASE "gearboxworks/gearbox-base:alpine-3.10"
+LABEL container.latest="false"
+ENV GEARBOX_LATEST "false"
+LABEL container.majorversion="2.0"
+ENV GEARBOX_MAJORVERSION "2.0"
+LABEL container.ref="composer:1.10"
+ENV GEARBOX_REF "composer:1.10"
+ENV PANTHEON_USER "gearbox"
+
+# 5. Now copy the local files specific to this container.
+COPY build /etc/gearbox
+COPY ${VERSION}/build /etc/gearbox
+COPY ${VERSION}/gearbox.json /etc/gearbox/gearbox.json
+
+# 6. Run the base.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/base.sh
+
+# 7. Run the terminus.sh script to set everything up.
+RUN /bin/sh /etc/gearbox/build/terminus.sh
+
+# 8. Expose ports.
+EXPOSE 22 9970 
+WORKDIR /home/gearbox/projects
+
+CMD ["/init"]
+
+# END
+################################################################################
