@@ -1,7 +1,7 @@
-![Gearbox](https://github.com/gearboxworks/gearbox.github.io/raw/master/Gearbox-100x.png)
+![Gearbox](https://raw.githubusercontent.com/gearboxworks/gearboxworks.github.io/master/assets/images/gearbox-logo.png)
 
 
-# Pantheon Terminus Docker Container for [Gearbox](https://github.com/gearboxworks/)
+# terminus Docker container service for [Gearbox](https://github.com/gearboxworks/)
 This is the repository for the [terminus](https://pantheon.io/docs/terminus) Docker container implemented for [Gearbox](https://github.com/gearboxworks/).
 
 
