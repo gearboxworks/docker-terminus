@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created on 2020-03-17T14:41:32+1100, using template:02-release.sh.tmpl and json:gearbox.json
+# Created on 2020-03-28T16:44:35+1100, using template:02-release.sh.tmpl and json:gearbox.json
 
 p_info "terminus-1.3.0" "Release test started."
 

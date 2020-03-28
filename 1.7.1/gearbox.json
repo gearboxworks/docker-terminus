@@ -69,6 +69,36 @@
 			"latest": false,
 			"ref": "composer:1.10",
 			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.4.1": {
+			"majorversion": "1.4",
+			"latest": false,
+			"ref": "composer:1.10",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.3.0": {
+			"majorversion": "1.3",
+			"latest": false,
+			"ref": "composer:1.10",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.2.1": {
+			"majorversion": "1.2",
+			"latest": false,
+			"ref": "composer:1.10",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.1.2": {
+			"majorversion": "1.1",
+			"latest": false,
+			"ref": "composer:1.10",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
+		},
+		"1.0.0": {
+			"majorversion": "1.0",
+			"latest": false,
+			"ref": "composer:1.10",
+			"base": "gearboxworks/gearbox-base:alpine-3.10"
 		}
 	}
 }
