@@ -9,8 +9,8 @@
 		"refurl": "https://pantheon.io/docs/terminus"
 	},
 	"build": {
-		"ports": [
-		],
+		"ports": {
+		},
 		"run": "",
 		"args": "",
 		"env": {
