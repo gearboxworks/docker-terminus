@@ -78,9 +78,9 @@ Create, and start the terminus Gearbox container. Run a shell.
 
 `./bin/gb-launch -gb-name terminus -gb-shell`
 
-Create, and start the terminus Gearbox container with version 2.3.0 and run a shell.
+Create, and start the terminus Gearbox container with version 1.3.0 and run a shell.
 
-`./bin/gb-launch -gb-name terminus -gb-version 2.3.0 -gb-shell`
+`./bin/gb-launch -gb-name terminus -gb-version 1.3.0 -gb-shell`
 
 If terminus is symlinked to `gb-launch`, then you can drop the `-gb-name` flag.
 
@@ -90,18 +90,18 @@ Running terminus Gearbox container default command. If a container has a default
 
 `./bin/terminus -flag1 -flag2 variable`
 
-`./bin/gb-launch -gb-name terminus -gb-version 2.3.0 -flag1 -flag2 variable`
+`./bin/gb-launch -gb-name terminus -gb-version 1.3.0 -flag1 -flag2 variable`
 
 
 Running alternate commands within the terminus Gearbox container.
 
 `./bin/terminus -gb-shell -- ls -l`
 
-`./bin/gb-launch -gb-name terminus -gb-version 2.3.0 -gb-shell -- ls -l`
+`./bin/gb-launch -gb-name terminus -gb-version 1.3.0 -gb-shell -- ls -l`
 
 `./bin/terminus -gb-shell -- ps -eaf`
 
-`./bin/gb-launch -gb-name terminus -gb-version 2.3.0 -gb-shell -- ps -eaf`
+`./bin/gb-launch -gb-name terminus -gb-version 1.3.0 -gb-shell -- ps -eaf`
 
 
 ssh - All [Gearbox](https://github.com/gearboxworks/) containers have a running SSH daemon. So you can connect remotely.

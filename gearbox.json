@@ -4,6 +4,7 @@
 		"state": "production",
 		"organization": "gearboxworks",
 		"name": "terminus",
+		"label": "Terminus",
 		"maintainer": "Gearbox Team <team@gearbox.works>",
 		"class": "system",
 		"refurl": "https://pantheon.io/docs/terminus"
