@@ -81,13 +81,13 @@ Create, and start the terminus Gearbox container. Run a shell.
 
 `./launch shell terminus`
 
-Create, and start the terminus Gearbox container with version 1.1.2 and run a shell.
+Create, and start the terminus Gearbox container with version 1.5.0 and run a shell.
 
-`./launch shell terminus:1.1.2`
+`./launch shell terminus:1.5.0`
 
-`./launch shell terminus:1.1.2 ls -l`
+`./launch shell terminus:1.5.0 ls -l`
 
-`./launch shell terminus:1.1.2 ps -eaf`
+`./launch shell terminus:1.5.0 ps -eaf`
 
 
 ### Available commands
@@ -100,7 +100,7 @@ Running terminus Gearbox container default command. If a container has a default
 
 `./terminus -flag1 -flag2 variable`
 
-`./launch terminus:1.1.2 -flag1 -flag2 variable`
+`./launch terminus:1.5.0 -flag1 -flag2 variable`
 
 Gearbox containers may have multiple executables that can be run. The terminus Gearbox container has the following available commands:
 - The default command will execute `/usr/local/bin/terminus` within the container.
