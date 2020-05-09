@@ -1,6 +1,6 @@
-*/logs/*.log
+versions/*/logs/*.log
+logs*zip
 .*.swp
 *.OLD
 docker-template
 docker-template.tgz
-logs*.zip
